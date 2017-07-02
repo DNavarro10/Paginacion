@@ -10,17 +10,17 @@ $postPorPagina = 5;
 
 $inicio = ($pagina > 1) ?($pagina * $postPorPagina - $postPorPagina) : 0;
 
-$arcticulos = $connexion ->prepare("
+$articulos = $connexion ->prepare("
 SELECT SQL_CALC_FOUND_ROWS * FROM articulos 
 LIMIT $inicio,$postPorPagina
 ");
 
-$arcticulos ->execute();
-$arcticulos = $arcticulos ->fetchAll();
+$articulos ->execute();
+$articulos = $articulos ->fetchAll();
 
 
 /* evitar mostar msa de la cuenta*/
-if(!$arcticulos){
+if(!$articulos){
 	header('Location: index.php');
 }
 
