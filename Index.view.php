@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Paginación</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<link rel="icon" href="">
+	<link rel="icon" href="img/estudio.ico">
 	<link rel="stylesheet" href="CSS/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 </head>
@@ -12,6 +12,7 @@
 	<div class="contenedor">
 		<header>
 		<h1>Articulos</h1>
+		<p>Se mostraran 5 artículos de la BD por página</p>
 	</header>
 	
 	<section class="articulos">
@@ -35,21 +36,20 @@
 			
 			<!-- Ejecutar el ciclo de mostrar paginas -->
 			<?php
-				for ($i=1; $i <= $numeroPaginas; $i++){
+				for ($i=1; $i <= $numeroPagina; $i++){
 					if($pagina == $i){
 						echo "<li class='active'><a href='?pagina=$i'>$i</a></li>";
 					}else{
-						echo "<li><a href='?pagina=$i'>$i</a></li>"
+						echo "<li><a href='?pagina=$i'>$i</a></li>";
 					}
 				}
 			?>
 			<!-- establecer cuando el boton de "SIGUIENTE" estara desabilitado -->
-			<?php if ($pagina == $numeroPaginas): ?>
+			<?php if ($pagina == $numeroPagina): ?>
 				<li class="disabled">&raquo;</li>
 			<?php else: ?>
 				<li><a href="?pagina=<?php echo $pagina + 1 ?>">&raquo;</a></li>
 			<?php endif; ?>
-		
 		
 		</ul>
 	</section>

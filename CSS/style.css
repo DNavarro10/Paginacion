@@ -17,13 +17,17 @@ body{
 	margin: auto;
 }
 
-h1{
-	margin: 20px 0;;
+header h1,p{
+	margin: 20px 0;
 	margin-top: 60px;
 	text-align: center;
 	font-family: "Oswald", sans-serif;
 	color: #ce7f08;
 	font-weight: normal;
+}
+header p{
+	padding: 10px;
+	border-bottom: 4px solid black;
 }
 
 .contenedor .articulos{
@@ -44,10 +48,11 @@ h1{
 }
 .paginacion{
 	text-align: center;
-}
+}	
 .paginacion ul{
 	list-style: none;
-
+	border-top: 4px solid black;
+	padding-top: 20px;
 }
 
 .paginacion ul li{
